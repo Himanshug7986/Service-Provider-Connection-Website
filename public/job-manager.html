@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+    <script>
+        var module = angular.module("myModule", []);
+        var controller = module.controller("myController", function ($scope, $http) {
+            $scope.jsonRecordsAry = [];
+             $scope.doFetchAll = function () {
+                 let url = "/angular-fetch-all-work";
+                 $http.get(url).then(done, fail);
+                 function done(response) {
+                     $scope.jsonRecordsAry = response.data;
+                 }
+                 function fail(response) {
+                    alert(response.data);
+                }
+             };
+            // //////////////////////////////////////////////////////////////fetch mail////////////////////////////////////////////////////////////////////////////////
+            $scope.doFetchDistinctemail = function () {
+                let url = "/fetch-distinct-email";
+                $http.get(url).then(success, errors);
+                function success(response) {
+                    $scope.jsonemailAry = response.data;
+                    // alert(JSON.stringify($scope.jsoncatAry));
+                }
+                function errors(response) {
+                    alert(response.data);
+                }
+            };
+            ////////////////////////////////////////////////////////////
+            $scope.doShowSelEmail = function () {
+                //alert(JSON.stringify($scope.selPwd));
+                // alert($scope.selEmail.emailid);
+                let url = "/fetch-rec?emailid=" + $scope.selEmail.emailid;
+                $http.get(url).then(success, errors);
+                function success(response) {
+                    $scope.jsonRecordsAry = response.data;
+                }
+                function errors(response) {
+                    alert(response.data);
+                }
+            };
+
+            $scope.doDelete=function(selrid)
+        {
+            if(confirm("R U Sure?")==false)
+                return;
+           // alert(emailid);
+           //let url="/angular-delete?emailkuch="+selemailid+"&pwd="+selemailid;
+           let url="/angular-delete?rid="+selrid;
+           $http.get(url).then(success,errors);
+            function success(response)
+            {
+                alert(response.data);
+            }
+            function errors(response)
+            {
+                alert(response.data);
+            }
+        }
+       
+        });
+    </script>
+</head>
+<body ng-app="myModule" ng-controller="myController" ng-init=" doFetchDistinctemail();">
+     <center>
+    <input type="button" value="Fetch All Records" ng-click="doFetchAll();">
+    <br><br>
+
+    <div class="col-md-12">
+        <center>
+            Email Id: 
+            <select ng-options="obj.emailid for obj in jsonemailAry" ng-model="selEmail" ng-change="doShowSelEmail();">
+                <option value="">Select</option>
+            </select>
+        </center>
+    </div>
+    <br>
+
+    <table width="700" border="1" rules="all">
+        <tr>
+            <th>Rid.</th>
+            <th>Email ID</th>
+            <th>Category</th>
+            <th>Subcategory</th>
+            <th>Task</th>
+            <th>UP TO</th>
+            <th>Operations</th>
+        </tr>
+        <tr ng-repeat="obj in jsonRecordsAry">
+            <td>{{obj.rid}}</td>
+            <td>{{obj.emailid}}</td>
+            <td>{{obj.cateogory}}</td>
+            <td>{{obj.subcateogory}}</td>
+            <td>{{obj.taskdone}}</td>
+            <td>{{obj.upto}}</td>
+            <th>
+                <a href="#" ng-click="doDelete(obj.rid);">Delete</a>
+            </th>
+        </tr>
+
+        </tr>
+    </table>
+     </center>
+</body>
+</html>

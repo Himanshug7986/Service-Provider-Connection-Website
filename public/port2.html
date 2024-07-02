@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+
+       
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color:lightblue;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.timeline {
+    border-left: 2px solid #ddd;
+    padding-left: 20px;
+}
+
+.timeline-item {
+    margin-bottom: 20px;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.skill-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.book-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.book {
+    text-align: center;
+}
+
+.book img {
+    width: 120px;
+    height: 160px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    background-color: solid white;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+       
+        <header>
+            <h1>Portfolio</h1>
+        </header>
+
+      
+        <section id="about-me" class="section">
+            <h2>About Me</h2>
+            <div class="card">
+                <img src="/public/pic/SIR.jpg" alt="Profile Picture">
+                <div class="card-info">
+                    <h3><strong>Name</strong> : Dr Bodlie Roshan Mukindrao</h3>
+                    <p><strong>Designation</strong> : Assistant Professor Grade-ii</p>
+                    <p><strong>Qualification:</strong> Ph.D. Biomedical Signal Processing (NIT Warangal)
+                        M.E. ECE (Prof. Ram Meghe Institute of Technology & Research, Badnera-Amravati)
+                        B.E. ECE (Shri Sant Gajanan Maharaj College of Engineering Shegaon)</p>
+                    <p><strong>Address:</strong>Department of ECE
+                            Dr B R Ambedkar National Institute of Technology,
+                            Jalandhar (Punjab) - 144027</p>
+                    <p><strong>Email ID:</strong>mukindraobr@nitj.ac.in</p>
+                </div>
+            </div>
+        </section>
+
+       
+        <section id="experience" class="section">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Current Position</h3>
+                    <p>Assistant Professor, NIT Jalandhar
+                        Full-time Jan 2023 - Present : </p>
+                   
+                </div>
+                <div class="timeline-item">
+                    <h3>Previous Position</h3>
+                    <p>Assistant Professor, NMCE
+                        Feb 2022 - Dec 2023</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="section">
+            <h2>Education</h2>
+            <div class="card">
+                <h3>PhD</h3>
+                <b></b>
+                <p>  Biomedical Signal Processing
+                    (NIT Warangal)</p>
+            </div>
+            <div class="card">
+                <h3>Master's Degree</h3>
+                <p>  (Prof. Ram Meghe Institute of Technology & Research, Badnera-Amravati)</p>
+            </div>
+            <div class="card">
+                <h3>Bachelor's Degree</h3>
+                <p>(Shri Sant Gajanan Maharaj College of Engineering Shegaon)</p>
+            </div>
+        </section>
+
+    
+        <section id="skills" class="section">
+            <h2>Skills</h2>
+            <div class="skill-list">
+                <ul>
+                    <li><strong>Biomedical signal processing</strong></li>
+                    <li><strong>Optimization Techniques</strong></li>
+                    <li><strong>Machine Learning</strong></li>
+                   
+                </ul>
+            </div>
+        </section>
+
+        <section id="publications" class="section">
+            <h2>Publications</h2>
+            <div class="book-list">
+                <div class="book">
+                    <img src="/public/pic/book 2 de.webp" alt="Book 1">
+                    <p><strong>Cancelation of 50 and 60 Hz Power-Line Interference from Electrocardiogram</strong></p>
+                </div>
+                <div class="book">
+                    <img src="/public/pic/book 3 de.webp" alt="Book 2">
+                    <p><strong>Machine Learning-Based Arrhythmia Classification</strong></p>
+                </div>
+                <div class="book">
+                    <img src="/public/pic/book 4 de.jpg" alt="Book 3">
+                    <p><strong>Journal of Circuits, Systems and Computers</strong></p>
+                </div>
+               
+            </div>
+        </section>
+
+      
+        <footer>
+            <p>@ECE Department</p>
+        </footer>
+    </div>
+
+  
+    <script src="scripts.js"></script>
+</body>
+</html>
